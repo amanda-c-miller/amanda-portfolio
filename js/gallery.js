@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let currentGallerySource = null;
 
-  /* ----------------------------------
-     Pause All Videos Helper
-  ---------------------------------- */
+// pause video func (called at end)
 
   function pauseAllVideos() {
     document.querySelectorAll('#dynamicCarousel video').forEach(video => {
@@ -17,9 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ----------------------------------
-     Render Gallery Slides (Optimized)
-  ---------------------------------- */
+// build the gallery slides
 
   function renderGallerySlides(galleryData) {
 
@@ -59,10 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ----------------------------------
-     Bind Click Events Once
-  ---------------------------------- */
-
+// populate with current images
   document.querySelectorAll('.project-img-wrapper').forEach(wrapper => {
 
     wrapper.addEventListener('click', function () {
@@ -79,10 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
-  /* ----------------------------------
-     Lifecycle Video Control
-  ---------------------------------- */
-
+// pause videos to prevent ongoing playback issues
   galleryModal.addEventListener('hidden.bs.modal', pauseAllVideos);
   carousel.addEventListener('slide.bs.carousel', pauseAllVideos);
 

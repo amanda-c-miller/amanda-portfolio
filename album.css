@@ -2,12 +2,6 @@
   --jumbotron-padding-y: 3rem;
 }
 
-/* ===========================
-   TRANSPARENT GLASS HEADER
-=========================== */
-/* ===========================
-   CENTERED TRANSPARENT NAVBAR
-=========================== */
 
 .navbar-transparent {
   position: fixed;
@@ -20,14 +14,14 @@
   box-shadow: none;
 }
 
-/* Hide navbar on mobile */
+/* no nav on mobile */
 @media (max-width: 768px) {
   .navbar-transparent {
     display: none;
   }
 }
 
-/* Hide navbar when scrolling */
+/* no nav on scroll */
 .navbar-hidden-scroll {
   opacity: 0;
   pointer-events: none;
@@ -75,17 +69,15 @@
   padding-top: 4rem;
 }
 
-/* ===========================
-   ELITE HERO SECTION
-=========================== */
+/* Hero section */
 .jumbotron {
   position: relative;
   min-height: 95vh;
 
   display: flex;
-  flex-direction: column; /* stack content vertically */
-  align-items: center;    /* center horizontally */
-  justify-content: center; /* center vertically */
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center; 
   text-align: center;
   margin-bottom: 0;
   padding-top: 140px;
@@ -159,7 +151,7 @@ section {
   transition: none !important;
 }
 
-/* Social icons */
+/* Icons  */
 
 .jumbotron .mt-3 a {
   color: white !important;
@@ -170,7 +162,7 @@ section {
   opacity: 0.7;
   transform: translateY(-2px);
 }
-/* ===== FOOTER ===== */
+/* Footer */
 
 footer {
   padding-top: 3rem;
@@ -181,20 +173,21 @@ footer p {
   margin-bottom: .25rem;
 }
 
-/* Shadow utility */
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .25);
 }
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+#about .album {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
-/* Thin out the marketing headings */
+/* Featurrete  */
+.featurette-divider {
+  margin: 3.5rem 0;
+  border-color: rgba(0,0,0,0.08);
+}
+
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
@@ -203,6 +196,10 @@ footer p {
 
 
 
+#about p {
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
 
 @media (min-width: 40em) {
   .carousel-caption p {
@@ -216,10 +213,20 @@ footer p {
   }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
+
+
+.featurette img {
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.featurette img:hover {
+  transform: scale(1.02);
+}
+
+.featurette-heading {
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
 .project-img {
@@ -237,6 +244,10 @@ footer p {
 .project-img:hover {
   transform: scale(1.02);
   opacity: 0.9;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .custom-carousel-btn {
@@ -361,6 +372,7 @@ footer p {
   );
 }
 
+
 .card {
   border: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -390,4 +402,19 @@ footer p {
     rgba(18, 32, 60, 0.85),
     rgba(242, 245, 251, 1)
   );
+}
+
+
+footer a {
+  color: #3f5383;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+footer a:hover {
+  opacity: 0.7;
+}
+footer {
+  background-color: transparent;
 }
