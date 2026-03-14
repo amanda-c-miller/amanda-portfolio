@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="embed-responsive embed-responsive-16by9">
           <iframe
             class="embed-responsive-item"
-            src="${item.src}?enablejsapi=1"
+            src="${item.src}?enablejsapi=1&origin=${location.origin}"
             title="YouTube video"
             allowfullscreen
             loading="lazy"
