@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
       video.pause();
       video.currentTime = 0;
     });
+
+    document.querySelectorAll('#dynamicCarousel iframe').forEach(frame => {
+      frame.contentWindow.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        '*'
+      );
+    });
+
   }
 
 // build the gallery slides
@@ -50,6 +58,24 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         `;
       }
+
+      else if (item.type === 'youtube') {
+
+      slide.innerHTML = `
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe
+            class="embed-responsive-item"
+            src="${item.src}?enablejsapi=1"
+            title="YouTube video"
+            allowfullscreen
+            loading="lazy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+          </iframe>
+        </div>
+      `;
+      }
+
 
       carouselContent.appendChild(slide);
     });
